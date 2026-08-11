@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CRITICAL THREAT INTERCEPTED — CYBERPUNK PHISH-SHIELD</title>
+  <link rel="stylesheet" href="blocked.css">
+</head>
+<body>
+  <div class="glitch-overlay"></div>
+  <div class="scanlines"></div>
+
+  <main class="interstitial-box">
+    <div class="warning-header">
+      <div class="hazard-icon">🚨</div>
+      <h1 class="glitch-title" data-text="ACCESS DENIED: MALICIOUS THREAT">ACCESS DENIED: MALICIOUS THREAT</h1>
+      <p class="subtitle">CYBERPUNK PHISH-SHIELD AI HAS INTERCEPTED A HIGH-RISK PHISHING LANDER</p>
+    </div>
+
+    <!-- Threat Score Banner -->
+    <div class="threat-score-bar">
+      <div class="bar-label">AI PHISHING THREAT PROBABILITY:</div>
+      <div class="score-display" id="scoreDisplay">85%</div>
+    </div>
+
+    <!-- Diagnostic Details -->
+    <div class="diagnostic-card">
+      <div class="card-header">DIAGNOSTIC THREAT LOG</div>
+      <div class="log-item">
+        <span class="log-key">TARGET URL:</span>
+        <span class="log-val url-val" id="targetUrlDisplay">http://phishing-example.com</span>
+      </div>
+      <div class="log-item">
+        <span class="log-key">INTERCEPT REASON:</span>
+        <span class="log-val" id="reasonDisplay">Zero-Day Domain & Credential Harvesting Target Mismatch</span>
+      </div>
+      <div class="log-item">
+        <span class="log-key">VERDICT:</span>
+        <span class="log-val danger-text">HIGH CONFIDENCE MALICIOUS LANDER</span>
+      </div>
+    </div>
+
+    <!-- Action Bar -->
+    <div class="action-bar">
+      <button class="cyber-btn safe-btn" id="safetyBtn">
+        🛡️ RETURN TO SAFETY
+      </button>
+      <button class="cyber-btn bypass-btn" id="bypassBtn">
+        ⚠️ BYPASS AT OWN RISK
+      </button>
+    </div>
+  </main>
+
+  <script src="blocked.js"></script>
+</body>
+</html>

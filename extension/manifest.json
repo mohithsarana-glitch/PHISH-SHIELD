@@ -1,0 +1,49 @@
+{
+  "manifest_version": 3,
+  "name": "CYBERPUNK PHISH-SHIELD — AI Phishing Detector",
+  "version": "1.0.0",
+  "description": "Real-time AI Phishing URL Detector with Cyberpunk HUD, sub-10ms on-device heuristics, DOM form audit & dynamic interstitial threat defense.",
+  "permissions": [
+    "tabs",
+    "webNavigation",
+    "storage",
+    "declarativeNetRequest",
+    "activeTab",
+    "notifications"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "scripts/background.js"
+  },
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_title": "CYBERPUNK PHISH-SHIELD HUD"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "scripts/content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "blocked/blocked.html",
+        "scripts/ml_ondevice.js"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+    }
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  }
+}

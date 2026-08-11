@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CYBERPUNK PHISH-SHIELD HUD</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="cyber-container">
+    <div class="scanlines"></div>
+    <div class="laser-line"></div>
+
+    <!-- HUD Header -->
+    <header class="hud-header">
+      <div class="brand">
+        <span class="glitch-text" data-text="PHISH-SHIELD">PHISH-SHIELD</span>
+        <span class="version-tag">v1.0 ML</span>
+      </div>
+      <div class="connection-status" id="connectionStatus">
+        <span class="dot"></span>
+        <span id="statusLabel">SYS_ONLINE</span>
+      </div>
+    </header>
+
+    <!-- Target URL Display -->
+    <section class="target-card">
+      <div class="card-label">TARGET ADDRESS</div>
+      <div class="url-truncate" id="activeUrl">QUERYING ACTIVE TAB...</div>
+    </section>
+
+    <!-- Radial Risk Gauge & Verdict -->
+    <section class="threat-meter-section">
+      <div class="gauge-wrapper">
+        <svg class="radial-gauge" viewBox="0 0 100 100">
+          <circle class="gauge-bg" cx="50" cy="50" r="42"></circle>
+          <circle class="gauge-progress" id="gaugeCircle" cx="50" cy="50" r="42" stroke-dasharray="264" stroke-dashoffset="264"></circle>
+        </svg>
+        <div class="gauge-center">
+          <span class="score-value" id="riskScore">0%</span>
+          <span class="score-label">RISK FACTOR</span>
+        </div>
+      </div>
+
+      <div class="verdict-banner" id="verdictBanner">
+        <div class="status-badge" id="statusBadge">[ SYSTEM SECURE ]</div>
+        <div class="verdict-text" id="verdictText">SAFE DOMAIN VERIFIED</div>
+      </div>
+    </section>
+
+    <!-- Diagnostic Breakdown Checklist -->
+    <section class="checklist-section">
+      <div class="section-title">DIAGNOSTIC MATRIX</div>
+      <div class="checklist-grid" id="checklistGrid">
+        <div class="check-item loading">Loading telemetry...</div>
+      </div>
+    </section>
+
+    <!-- Quick Action Buttons -->
+    <footer class="hud-actions">
+      <button class="cyber-btn report-btn" id="reportBtn">
+        <span class="btn-icon">🚨</span>
+        <span class="btn-text">REPORT PHISH</span>
+      </button>
+      <button class="cyber-btn refresh-btn" id="reAnalyzeBtn">
+        <span class="btn-icon">⚡</span>
+        <span class="btn-text">RE-SCAN</span>
+      </button>
+    </footer>
+
+    <div class="toast-notification" id="toast">Threat Report Dispatched to Grid</div>
+  </div>
+
+  <script src="../scripts/ml_ondevice.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
